@@ -102,9 +102,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
               }
             : null,
         child: Container(
-          decoration: BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(color: Colors.grey[300], width: 1))),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -176,9 +173,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
 
   Widget desktopHeader() {
     return Container(
-      decoration: BoxDecoration(
-          border:
-              Border(bottom: BorderSide(color: Colors.grey[300], width: 1))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -240,9 +234,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
             : null,
         child: Container(
             padding: EdgeInsets.all(widget.showSelect ? 0 : 11),
-            decoration: BoxDecoration(
-                border: Border(
-                    bottom: BorderSide(color: Colors.grey[300], width: 1))),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -323,9 +314,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                 if (widget.title != null || widget.actions != null)
                   Container(
                     padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(color: Colors.grey[300]))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -383,9 +371,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                 if (widget.title != null || widget.actions != null)
                   Container(
                     padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(color: Colors.grey[300]))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
