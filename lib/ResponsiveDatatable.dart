@@ -197,7 +197,7 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                       child: header.headerBuilder != null
                           ? header.headerBuilder(header.value)
                           : Container(
-                              padding: EdgeInsets.all(28),
+                              padding: EdgeInsets.all(16),
                               alignment: headerAlignSwitch(header.textAlign),
                               child: Wrap(
                                 crossAxisAlignment: WrapCrossAlignment.center,
