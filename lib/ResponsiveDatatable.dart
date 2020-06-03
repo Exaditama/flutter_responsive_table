@@ -338,6 +338,7 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                     child: Container(
                       child: ListView(
                         // itemCount: source.length,
+                        padding: EdgeInsets.all(0),
                         children: [
                           if (widget.showSelect && widget.selecteds != null)
                             mobileHeader(),
@@ -391,7 +392,9 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                   if (widget.source != null && widget.source.isNotEmpty)
                     Expanded(
                         child: Container(
-                            child: ListView(children: desktopList()))),
+                            child: ListView(
+                                padding: EdgeInsets.all(0),
+                                children: desktopList()))),
 
                 //footer
                 if (widget.footers != null)
