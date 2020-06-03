@@ -131,9 +131,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                               ? header.headerBuilder(header.value)
                               : Text(
                                   header.text,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black),
                                   overflow: TextOverflow.clip,
                                 ),
                           Spacer(),
@@ -207,9 +204,6 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                                 children: [
                                   Text(
                                     "${header.text}",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black),
                                     textAlign: header.textAlign,
                                   ),
                                   if (widget.sortColumn != null &&
