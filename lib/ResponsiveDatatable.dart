@@ -123,14 +123,17 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                   .toList()
                   .map(
                     (header) => Container(
-                      padding: EdgeInsets.all(11),
+                      padding: EdgeInsets.all(28),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           header.headerBuilder != null
                               ? header.headerBuilder(header.value)
                               : Text(
-                                  "${header.text}",
+                                  header.text,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
                                   overflow: TextOverflow.clip,
                                 ),
                           Spacer(),
@@ -197,13 +200,16 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                       child: header.headerBuilder != null
                           ? header.headerBuilder(header.value)
                           : Container(
-                              padding: EdgeInsets.all(11),
+                              padding: EdgeInsets.all(28),
                               alignment: headerAlignSwitch(header.textAlign),
                               child: Wrap(
                                 crossAxisAlignment: WrapCrossAlignment.center,
                                 children: [
                                   Text(
                                     "${header.text}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black),
                                     textAlign: header.textAlign,
                                   ),
                                   if (widget.sortColumn != null &&
@@ -304,8 +310,8 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
     return context.isExtraSmall || context.isSmall || context.isMedium
         ?
         /**
-         * for small screen
-         */
+     * for small screen
+     */
         Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -328,8 +334,7 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                     children: [
                       if (widget.showSelect && widget.selecteds != null)
                         mobileHeader(),
-                      if (widget.isLoading)
-                        LinearProgressIndicator(),
+                      if (widget.isLoading) LinearProgressIndicator(),
                       //mobileList
                       ...mobileList(),
                     ],
@@ -342,8 +347,7 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                         children: [
                           if (widget.showSelect && widget.selecteds != null)
                             mobileHeader(),
-                          if (widget.isLoading)
-                            LinearProgressIndicator(),
+                          if (widget.isLoading) LinearProgressIndicator(),
                           //mobileList
                           ...mobileList(),
                         ],
@@ -362,8 +366,8 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
             ),
           )
         /**
-          * for large screen
-          */
+     * for large screen
+     */
         : Container(
             child: Column(
               children: [
@@ -384,11 +388,9 @@ class _ResponsiveDatatableState extends State<ResponsiveDatatable> {
                 if (widget.headers != null && widget.headers.isNotEmpty)
                   desktopHeader(),
 
-                if (widget.isLoading)
-                  LinearProgressIndicator(),
+                if (widget.isLoading) LinearProgressIndicator(),
 
-                if (widget.autoHeight)
-                  Column(children: desktopList()),
+                if (widget.autoHeight) Column(children: desktopList()),
 
                 if (!widget.autoHeight)
                   // desktopList
